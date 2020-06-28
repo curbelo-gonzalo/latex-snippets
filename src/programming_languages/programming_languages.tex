@@ -1,0 +1,33 @@
+% =============================================================================
+% DESCRIPTION:
+% This file contains commands to insert neat, selectable, searchable, copy-able
+%   text representations of the name of programming languages. It is by no
+%   means an exhaustive list.
+
+% =============================================================================
+% PREAMBLE:
+% \documentclass{article}
+
+% =============================================================================
+% REMARKS:
+% This was only tested in documentclass "article". It may or may not work with
+%   other classes.
+
+% =============================================================================
+% CONTENTS:
+
+% \CPlusPlus
+% Desciption: Inserts "C++".
+% Arguments: None
+% Remarks: None
+\newcommand{\CPlusPlus}{%
+    C\nolinebreak[4]\hspace{-0.1em}\raisebox{0.35ex}{\footnotesize\textbf{++}}%
+}
+
+% \CSharp
+% Desciption: Inserts "C#".
+% Arguments: None
+% Remarks: None
+\newcommand{\CSharp}{%
+    C\nolinebreak[4]\hspace{-0.1em}\raisebox{0.35ex}{\footnotesize\textbf{\#{}}}%
+}
