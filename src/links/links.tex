@@ -1,0 +1,69 @@
+% =============================================================================
+% DESCRIPTION:
+% This file contains commands to insert colored, underlined links.
+
+% =============================================================================
+% PREAMBLE:
+% \documentclass{article}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xparse}
+\usepackage{hyperref}
+
+% =============================================================================
+% REMARKS:
+% This was only tested in documentclass "article". It may or may not work with
+%   other classes.
+
+% =============================================================================
+% CONTENTS:
+
+% \Link
+% Desciption: Inserts a link to a given URL.
+% Arguments:
+%   #1 = (Optional) Text to show in place. Defaults to the link location.
+%   #2 = (Optional) Color of the link. Defaults to "LinkColor".
+%   #3 = (Required) Location of the link.
+% Remarks:
+%   If a value for #2 has not been provided, it is assumed that a color
+%     LinkColor has been previously defined; otherwise, this command will fail.
+\NewDocumentCommand{\Link}{ o o m }{%
+    \href{#3}{
+        \textcolor{%
+            \IfValueTF{#2}{#2}{LinkColor}%
+        }{%
+            \underline{%
+                \IfValueTF{#1}{#1}{#3}%
+            }%
+        }%
+    }%
+}
+
+% \EmailLink
+% Desciption: Inserts a link to a given e-mail address.
+% Arguments:
+%   #1 = (Optional) Text to show in place. Defaults to the e-mail address.
+%   #2 = (Optional) Color of the link. Defaults to "LinkColor".
+%   #3 = (Required) A valid e-mail address, without "mailto:" at the beginning.
+% Remarks:
+%   If a value for #2 has not been provided, it is assumed that a color
+%     LinkColor has been previously defined; otherwise, this command will fail.
+\NewDocumentCommand{\EmailLink}{ o o m }{%
+    \Link[%
+        \IfValueTF{#1}{#1}{#3}%
+    ][#2]{mailto:#3}
+}
+
+% \PhoneNumberLink
+% Desciption: Inserts a link to a given phone number.
+% Arguments:
+%   #1 = (Optional) Text to show in place. Defaults to the phone number.
+%   #2 = (Optional) Color of the link. Defaults to "LinkColor".
+%   #3 = (Required) A valid phone number, without "tel:" at the beginning.
+% Remarks:
+%   If a value for #2 has not been provided, it is assumed that a color
+%     LinkColor has been previously defined; otherwise, this command will fail.
+\NewDocumentCommand{\PhoneNumberLink}{ o o m }{%
+    \Link[%
+        \IfValueTF{#1}{#1}{#3}%
+    ][#2]{tel:#3}
+}

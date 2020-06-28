@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\input{links.tex}
+
+\definecolor{LinkColor}{RGB}{0, 0, 238}
+\definecolor{UserDefinedColor}{RGB}{238, 0, 0}
+
+\begin{document}
+    \Link[Link to an example website][UserDefinedColor]{https://www.example.com/}
+
+    \Link[Link to an example website]{https://www.example.com/}
+
+    \Link{https://www.example.com/}
+
+    \EmailLink[Link to an example e-mail address][UserDefinedColor]{example@example.com}
+
+    \EmailLink[Link to an example e-mail address]{example@example.com}
+
+    \EmailLink{example@example.com}
+
+    \PhoneNumberLink[Link to an example phone number][UserDefinedColor]{+01189998819991197253}
+
+    \PhoneNumberLink[Link to an example phone number]{+01189998819991197253}
+
+    \PhoneNumberLink{+01189998819991197253}
+\end{document}
