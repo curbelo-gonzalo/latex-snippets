@@ -1,0 +1,42 @@
+% =============================================================================
+% DESCRIPTION:
+% This file contains commands to represent mathematical functions. It is by no
+%   means an exhaustive list.
+
+% =============================================================================
+% PREAMBLE:
+\usepackage{mathtools}
+
+% =============================================================================
+% REMARKS:
+% This was only tested in documentclass "article". It may or may not work with
+%   other classes.
+
+% =============================================================================
+% CONTENTS:
+
+% \Ceil \Ceil*
+% Description: Inserts the left and right upper square brackets that represent
+%   the ceiling function.
+% Arguments (unstarred version):
+%   #1 = (Optional) Delimiter size. Available options are defined in the
+%        "mathtools" package.
+%   #2 = (Required) Contents. May be empty.
+% Arguments (starred version):
+%   #1 = (Required) Contents.
+% Remarks:
+%   This only works inside mathematical mode.
+\DeclarePairedDelimiter{\Ceil}{\lceil}{\rceil}
+
+% \Floor \Floor*
+% Description: Inserts the left and right lower square brackets that represent
+%   the floor function.
+% Arguments (unstarred version):
+%   #1 = (Optional) Delimiter size. Available options are defined in the
+%        "mathtools" package.
+%   #2 = (Required) Contents. May be empty.
+% Arguments (starred version):
+%   #1 = (Required) Contents.
+% Remarks:
+%   This only works inside mathematical mode.
+\DeclarePairedDelimiter{\Floor}{\lfloor}{\rfloor}
