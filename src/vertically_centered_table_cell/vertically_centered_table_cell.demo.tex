@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{multirow}
+
+\input{vertically_centered_table_cell.tex}
+
+\begin{document}
+    \begin{table}[h!]
+        \begin{tabular}{ |r|l| }
+        \hline
+            \multirow{2}{*}{\VerticallyCenteredCell{Cell contents}} & Cell contents \\
+             & Cell contents \\
+        \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h!]
+        \begin{tabular*}{0.4\linewidth}{ |r|l| }
+        \hline
+            \multirow{2}{*}{\VerticallyCenteredCell{Cell contents}} & Cell contents \\
+             & Cell contents \\
+        \hline
+        \end{tabular*}
+    \end{table}
+
+    \begin{table}[h!]
+        \begin{tabular}{ |r|l| }
+        \hline
+            \multirow{3}{*}{\VerticallyCenteredCell{Cell contents}} & Cell contents \\
+             & Cell contents \\
+             & Cell contents \\
+        \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h!]
+        \begin{tabular*}{0.4\linewidth}{ |r|l| }
+        \hline
+            \multirow{3}{*}{\VerticallyCenteredCell{Cell contents}} & Cell contents \\
+             & Cell contents \\
+             & Cell contents \\
+        \hline
+        \end{tabular*}
+    \end{table}
+\end{document}
