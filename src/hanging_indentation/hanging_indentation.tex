@@ -1,0 +1,31 @@
+% =============================================================================
+% DESCRIPTION:
+% This file contains commands to give hanging indent (a.k.a. second line
+%   indent, a.k.a. French indentation) to paragraphs.
+
+% =============================================================================
+% PREAMBLE:
+% \documentclass{article}
+\usepackage{hanging}
+
+% =============================================================================
+% REMARKS:
+% This was only tested in documentclass "article". It may or may not work with
+%   other classes.
+
+% =============================================================================
+% CONTENTS:
+
+% \HangingIndentation
+% Description: Gives a specified hanging indentation to the provided text.
+% Arguments:
+%   #1 = (Required) Indentation size.
+%   #2 = (Required) Contents. May be empty.
+% Remarks:
+%   This uses the hangparas environment from the hanging package. If there are
+%     some unintended effects on the text, check that package's documentation.
+\newcommand{\HangingIndentation}[2]{%
+    \begin{hangparas}{#1}{1}%
+        #2%
+    \end{hangparas}%
+}
