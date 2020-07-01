@@ -1,0 +1,57 @@
+% =============================================================================
+% DESCRIPTION:
+% This file contains commands to insert special underlines (e.g. fixed in
+%   length) below text.
+
+% =============================================================================
+% PREAMBLE:
+% \documentclass{article}
+\usepackage{stackengine}
+
+% =============================================================================
+% REMARKS:
+% This was only tested in documentclass "article". It may or may not work with
+%   other classes.
+
+% =============================================================================
+% CONTENTS:
+
+% \FLUnderline
+% Description: Inserts a fixed-length straight line below a given text.
+% Arguments:
+%   #1 = (Optional) Text alignment. Defaults to "l".
+%   #2 = (Required) Line length. Must be defined in terms of spacing commands.
+%   #3 = (Required) Contents. May be empty.
+% Remarks: None.
+\newcommand{\FLUnderline}[3][l]{%
+    \stackengine{0pt} % stacking length
+                {\underline{#2\vphantom{#3}}} % stack anchor
+                {#3}  % item stacked relative to the anchor
+                {O}   % O = normal/overstacked
+                {#1}  % alignment (l, c, r)
+                {F}   % F = print the resulting stack
+                {F}   % F = do NOT take the width of the whole stack is as the
+                      %     width of the anchor
+                {L}   % L = request a long stack
+}
+
+% \MLUnderline
+% Description: Inserts a minumum-length straight line below a given text.
+% Arguments:
+%   #1 = (Optional) Text alignment. Defaults to "l".
+%   #2 = (Required) Line length. Must be defined in terms of spacing commands.
+%   #3 = (Required) Contents. May be empty.
+% Remarks: None.
+\newcommand{\MLUnderline}[3][l]{%
+    \underline{%
+        \stackengine{0pt} % stacking length
+                    {#2}  % stack anchor
+                    {#3}  % item stacked relative to the anchor
+                    {O}   % O = normal/overstacked
+                    {#1}  % alignment (l, c, r)
+                    {F}   % F = print the resulting stack
+                    {F}   % F = do NOT take the width of the whole stack is as
+                          %     the width of the anchor
+                    {L}%    L = request a long stack
+    }%
+}
